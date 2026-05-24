@@ -18,5 +18,10 @@
         ]
       }
     ]
-  }
+  },
+  "repository": "https://github.com/inwenis/vs-tc-color-show",
+  "files": [
+    "extension.js",
+    "LICENSE.md"
+  ]
 }
