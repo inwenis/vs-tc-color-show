@@ -1,0 +1,22 @@
+{
+  "name": "vs-tc-color-show",
+  "displayName": "TC Color Show",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "activationEvents": [
+    "onLanguage:ini"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ini",
+        "extensions": [
+          ".ini"
+        ]
+      }
+    ]
+  }
+}
