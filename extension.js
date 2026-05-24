@@ -1,26 +1,35 @@
 const vscode = require('vscode');
 
-const redSquare = vscode.window.createTextEditorDecorationType({
+const colorSquare = vscode.window.createTextEditorDecorationType({
   after: {
     contentText: '■',
-    color: 'red',
     margin: '0 0 0 4px'
   }
 });
 
 function paint(editor) {
   const text = editor.document.getText();
-  const ranges = [];
-  const regex = /\$0000FF/g;
+  const decorations = [];
+  const regex = /\$[0-9a-fA-F]{6}/g;
   let match;
 
   while ((match = regex.exec(text))) {
     const start = editor.document.positionAt(match.index);
     const end = editor.document.positionAt(match.index + match[0].length);
-    ranges.push(new vscode.Range(start, end));
+    const bbggrr = match[0].slice(1);
+    const color = `#${bbggrr.slice(4, 6)}${bbggrr.slice(2, 4)}${bbggrr.slice(0, 2)}`;
+
+    decorations.push({
+      range: new vscode.Range(start, end),
+      renderOptions: {
+        after: {
+          color
+        }
+      }
+    });
   }
 
-  editor.setDecorations(redSquare, editor.document.fileName.endsWith('.ini') ? ranges : []);
+  editor.setDecorations(colorSquare, editor.document.fileName.endsWith('.ini') ? decorations : []);
 }
 
 function activate(context) {
