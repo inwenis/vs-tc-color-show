@@ -13,7 +13,7 @@ vs code extension to show colors when editing .ini files for total commander.
 npm install -g @vscode/vsce
 ```
 
-## Published a .vsix
+## Publish a .vsix
 ```
 vsce package
 ```
