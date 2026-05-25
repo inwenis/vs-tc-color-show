@@ -39,7 +39,7 @@ function addDecoration(editor, decorations, startIndex, length, color) {
 }
 
 function paint(editor) {
-  if (!editor || !editor.document.fileName.endsWith('.ini')) {
+  if (!editor || !editor.document.fileName.toLowerCase().endsWith('.ini')) {
     return;
   }
 
