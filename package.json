@@ -1,7 +1,7 @@
 {
   "name": "vs-tc-color-show",
   "displayName": "TC Color Show",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.80.0"
   },
