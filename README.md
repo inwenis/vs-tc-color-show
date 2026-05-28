@@ -20,5 +20,5 @@ vsce package
 
 ## Install extension
 ```
-code --install-extension C:/git/vs-tc-color-show/vs-tc-color-show-0.0.2.vsix
+code --install-extension ./vs-tc-color-show-0.0.2.vsix
 ```
