@@ -1,3 +1,4 @@
+
 const vscode = require('vscode');
 
 const colorSquare = vscode.window.createTextEditorDecorationType({
@@ -8,7 +9,8 @@ const colorSquare = vscode.window.createTextEditorDecorationType({
 });
 
 const hexBbggrrRegex = /\$[0-9a-fA-F]{6}/g;
-const decimalColorKeyRegex = /^(?:BackColor2?|ForeColor|MarkColor|CursorColor|CursorText|ColorFilter\d+Color)$/i;
+
+const decimalColorKeyRegex = /^(?:BackColor2?|ForeColor|MarkColor|CursorColor|CursorText|ActiveTitle|ActiveTitleText|InactiveTitle|InactiveTitleText|ThumbnaiFrame|ThreeLineColor|ActiveTabColor|HintForeground|HintBackground|HintBorder|CompareText|CompareBinary|DarkForeground|DarkBackground|DarkHighlight|DarkBorder|ColorFilter\d+Color(?:Dark)?)$/i;
 const decimalValueRegex = /^\d{1,8}$/;
 
 function decimalBbggrrToCssHex(decimalBbggrr) {
